@@ -19,7 +19,7 @@ def upload_helper(database, location):
       aws_access_key_id = location["connection"]["aws_access_key_id"],
       aws_secret_access_key = location["connection"]["aws_secret_access_key"]
     )
-    s3.Bucket(location["connection"]["bucket"]).upload_file(f'{config["working_path"]}{database["name"]}.sql', location["config"]["bucket"], f"{database['name']}-{datetime.today().strftime('%Y-%m-%d-%H:%M:%S')}.sql")
+    s3.Bucket(location["connection"]["bucket"]).upload_file(f'{config["working_path"]}{database["name"]}.sql', f"{database['name']}-{datetime.today().strftime('%Y-%m-%d-%H:%M:%S')}.sql")
   else:
     return
 
