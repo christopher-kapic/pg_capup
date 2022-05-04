@@ -1,5 +1,5 @@
 {
-  "working_path": "/Users/home/christopherkapic",
+  "working_path": "/home/christopherkapic/pg_capup",
   "notifications": {
     "slack_api_key": "",
     "triggers": [
