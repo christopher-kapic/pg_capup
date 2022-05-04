@@ -13,4 +13,4 @@ Steps:
 
 1. Other databases.
 2. Other storage locations (right now, only S3 works).
-3. Slack notifications.
+3. Slack notifications (currently works, but should probably send notifications on errors).
