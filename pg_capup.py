@@ -5,7 +5,7 @@ import json
 import boto3
 from datetime import datetime
 
-f = open('~/pg_capup/config.json')
+f = open(f'{os.path.expanduser("~")}/pg_capup/config.json')
 config = json.load(f)
 
 def backup_db(database):
