@@ -4,6 +4,7 @@ import os
 import json
 import boto3
 from datetime import datetime
+import requests
 
 f = open(f'{os.path.expanduser("~")}/pg_capup/config.json')
 config = json.load(f)
@@ -35,8 +36,14 @@ def upload_file(database, location, locations):
       print(f"Uploading backup of {database['name']} to {location}.")
       upload_helper(database, loc)
 
+def slack_notification_helper(content):
+  if (config["notifications"]["slack_webhook"] != ""):
+    requests.post(
+      config["notifications"]["slack_webhook"], data=json.dumps({"text": content}), headers={'Content-Type': 'application/json'}
+    )
 
 for database in config["databases"]:
   backup_db(database)
   for location in database["locations"]:
     upload_file(database, location, config["backup_locations"])
+    slack_notification_helper(f"Uploaded {database['name']} to {location}.")

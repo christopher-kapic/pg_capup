@@ -1,7 +1,7 @@
 {
   "working_path": "/home/christopherkapic/pg_capup",
   "notifications": {
-    "slack_api_key": "",
+    "slack_webhook": "",
     "triggers": [
       "run",
       "backup",
