@@ -4,9 +4,8 @@ import os
 import json
 import boto3
 from datetime import datetime
-# cmd = 'bin/bar --option --otheroption'
-# os.system(cmd) # returns the exit status
-f = open('config.json')
+
+f = open('~/pg_capup/config.json')
 config = json.load(f)
 
 def backup_db(database):
@@ -34,4 +33,3 @@ for database in config["databases"]:
   backup_db(database)
   for location in database["locations"]:
     upload_file(database, location, config["backup_locations"])
-  
