@@ -1,0 +1,42 @@
+{
+  "working_path": "/Users/home/christopherkapic",
+  "notifications": {
+    "slack_api_key": "",
+    "triggers": [
+      "run",
+      "backup",
+      "upload"
+    ]
+  },
+  "backup_locations": [
+    {
+      "name": "Backblaze",
+      "type": "S3",
+      "connection": {
+        "endpoint_url": "",
+        "aws_access_key_id": "",
+        "aws_secret_access_key": "",
+        "bucket": ""
+      }
+    },
+    {
+      "name": "Google Cloud Storage",
+      "type": "GCS",
+      "connection": {
+      }
+    }
+  ],
+  "databases": [
+    {
+      "name": "srv-captain--badaxoutfitterscms-postgres",
+      "type": "pg",
+      "database": "directus",
+      "username": "directus",
+      "frequency": "daily",
+      "locations": [
+        "Backblaze",
+        "Google Cloud Storage"
+      ]
+    }
+  ]
+}
