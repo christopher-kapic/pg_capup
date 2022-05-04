@@ -20,6 +20,8 @@ def upload_helper(database, location):
       aws_secret_access_key = location["config"]["aws_secret_access_key"]
     )
     s3.upload_file(f'{config["working_path"]}{database["name"]}.sql', location["config"]["bucket"], f"{database['name']}-{datetime.today().strftime('%Y-%m-%d-%H:%M:%S')}.sql")
+  else:
+    return
 
 def upload_file(database, location, locations):
   for loc in locations:
