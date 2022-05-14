@@ -28,10 +28,10 @@
   ],
   "databases": [
     {
-      "name": "srv-captain--badaxoutfitterscms-postgres",
+      "name": "srv-captain--an-example-postgres",
       "type": "pg",
-      "database": "directus",
-      "username": "directus",
+      "database": "example",
+      "username": "example",
       "frequency": "daily",
       "locations": [
         "Backblaze",
